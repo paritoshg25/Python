@@ -1,0 +1,30 @@
+# Figure out your age
+import datetime
+currentDate = datetime.datetime.now()
+
+deadline = input('Plz enter your date of birth (dd/mm/yyyy) ')
+deadlineDate = datetime.datetime.strptime(deadline, '%d/%m/%Y')
+print(deadlineDate)
+daysLeft = deadlineDate - currentDate
+print(daysLeft*-1)
+
+years = ((daysLeft.total_seconds())/(365.242*24*3600))
+yearsInt = int(years)*-1
+
+months = (years-yearsInt)*12
+monthsInt = int(months)*-1
+
+days = (months-monthsInt)*(365.242/12)
+daysInt = int(days)*-1
+
+hours = (days-daysInt)*24
+hoursInt = int(hours)*-1
+
+minutes = (hours-hoursInt)*60
+minutesInt = int(minutes)*-1
+
+seconds = (minutes-minutesInt)*60
+secondsInt = int(seconds)*-1
+
+print('You are {0:d} years, {1:d}  months, {2:d}  days, {3:d}  hours, {4:d} \
+ minutes, {5:d} seconds old.'.format(yearsInt, monthsInt, daysInt, hoursInt, minutesInt, secondsInt))
