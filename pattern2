@@ -1,0 +1,12 @@
+for i in range(0, 10):
+    if i % 2 != 0:
+        for k in range(i):
+            print(a, end=' ')
+            a = a+2
+    else:
+        for k in range(i):
+            print(b , end=' ')
+            b = b+2
+    print()
+    a = 1
+    b = 2
