@@ -1,0 +1,50 @@
+# Rock
+import random
+
+print("""
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+""")
+
+# Paper
+print("""
+     _______
+---'    ____)____
+           ______)
+          _______)
+         _______)
+---.__________)
+""")
+
+# Scissors
+print("""
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+""")
+
+game_images = ["rock" , "paper", "sissor"]
+user_choice = int(input("Enter choice: "))
+if user_choice < 0 or user_choice > 2:
+    print("Invalid Choice")
+else:
+    print("User Choice: ", game_images[user_choice])
+    comp_choice = random.randint(0,2)
+    print("Computer Choice: ", game_images[comp_choice])
+
+    key = user_choice - comp_choice
+
+    if key == 1 or key == -2:
+        print("You Win")
+    elif key == -1 or key == -2:
+        print("You Loose")
+    else:
+        print("Draw")
+
