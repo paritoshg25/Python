@@ -10,9 +10,11 @@ with open(filename, 'r') as file:
     for row in csv_reader:
         if (row != []):
             names = row[0]
-            date = row[1]
+            dob = row[1]
+            print("Name = ", names, "   D.O.B = ", dob)
 
-            date2 = datetime.datetime.strptime(date, '%d/%m/%Y')
+            date2 = datetime.datetime.strptime(dob, '%d/%m/%Y')
 
             if currentDate.day == date2.day and currentDate.month == date2.month:
                 print("Happy Birthday", row[0], "!!!")
+
