@@ -1,0 +1,20 @@
+import csv
+
+filename = 'studentinfo.csv'
+fields = ['Name', 'D.O.B']
+count = 0
+choice = 'yes'
+while choice == 'yes':
+    with open(filename, 'a') as file:
+
+        csv_write = csv.writer(file)
+        # csv_write.writerow(fields)
+
+        name = input("enter your name: ")
+        dob = input("Enter D.O.B: ")
+
+        csv_write.writerow([name, dob])
+        count = count+1
+        choice = input("Continue? [yes/no] : ").lower()
+
+print(count, "Rows Inserted!")
